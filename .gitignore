@@ -3,3 +3,15 @@
 *.d
 *.mh
 *.o
+*.err
+*.a
+*.so
+*.init
+*.pic_o
+*.module_dep
+*.int
+*.int2
+*.int3
+*.date
+*.date3
+*.err_date
