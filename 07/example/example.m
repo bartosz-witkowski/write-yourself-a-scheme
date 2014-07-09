@@ -27,6 +27,8 @@ write_list --> (var,  [','] -> write_list ; var).
 :- pred var(list(char)::in, list(char)::out) is semidet.
 var --> ['a'] ; ['b'] ; ['c'] ; ['d'] ; ['e'].
 
+% The rules ignore whitespace so for readability we
+% spell out everything separately.
 :- func to_parse = string.
 to_parse = "read" ++ "a" ++
            "read" ++ "b" ++
