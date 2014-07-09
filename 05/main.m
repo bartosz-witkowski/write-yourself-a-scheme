@@ -11,7 +11,7 @@
 
 :- import_module char, string, list.
 
-:- pred symbol(char::out, list(character)::in, list(character)::out) is semidet.
+:- pred symbol(char::out, list(char)::in, list(char)::out) is semidet.
 symbol(C, ListIn, ListOut) :-
     ListIn = [C | ListOut],
     string.contains_char("!$%&|*+-/:<=>?@^_~#", C).
@@ -29,7 +29,7 @@ whitespace(ListIn, ListOut) :-
     whitespace(Rest, ListOut)
   ; ListIn = ListOut).
 
-:- pred rule(char::out, list(character)::in, list(character)::out) is semidet.
+:- pred rule(char::out, list(char)::in, list(char)::out) is semidet.
 rule(Symbol, ListIn, ListOut) :-
   whitespace(ListIn, Without_Whitespace),
   symbol(Symbol, Without_Whitespace, ListOut).

@@ -11,7 +11,7 @@
 
 :- import_module char, string, list.
 
-:- pred symbol(char::out, list(character)::in, list(character)::out) is semidet.
+:- pred symbol(char::out, list(char)::in, list(char)::out) is semidet.
 symbol(C, ListIn, ListOut) :-
     ListIn = [C | ListOut],
     string.contains_char("!$%&|*+-/:<=>?@^_~#", C).
