@@ -1,0 +1,2 @@
+all:
+	mmc example.m
