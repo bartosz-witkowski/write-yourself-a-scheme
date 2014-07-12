@@ -94,7 +94,7 @@ parse_number(Chars) --> ( digit(X) ->
 
 % quoted
 
-:- pred quoted(lisp_val::out, list(character)::in, list(character)::out) is semidet.
+:- pred quoted(lisp_val::out, list(char)::in, list(char)::out) is semidet.
 quoted(Quoted) --> 
         [ '\'' ],
         expression(Expression),
@@ -104,21 +104,21 @@ quoted(Quoted) -->
 
 % list
 
-:- pred list(lisp_val::out, list(character)::in, list(character)::out) is det.
+:- pred list(lisp_val::out, list(char)::in, list(char)::out) is det.
 list(List) --> parse_list(Xs), { List = lisp_list(Xs) }.
 
-:- pred parse_list(list(lisp_val)::out, list(character)::in, list(character)::out) is det.
+:- pred parse_list(list(lisp_val)::out, list(char)::in, list(char)::out) is det.
 parse_list(List) -->
   ( expression(Expression), space, parse_list(Rest) -> { List = [ Expression | Rest ] }
   ; expression(Expression) -> { List = [Expression] }
   ; { List = [] } ).
 
 % dotted list
-:- pred dotted_list(lisp_val::out, list(character)::in, list(character)::out) is semidet.
+:- pred dotted_list(lisp_val::out, list(char)::in, list(char)::out) is semidet.
 dotted_list(Dotted_List) -->
   parse_dotted_list(Xs, X), { Dotted_List = lisp_dotted_list(Xs, X) }.
 
-:- pred parse_dotted_list(list(lisp_val)::out, lisp_val::out, list(character)::in, list(character)::out) is semidet.
+:- pred parse_dotted_list(list(lisp_val)::out, lisp_val::out, list(char)::in, list(char)::out) is semidet.
 parse_dotted_list(List, Expression) -->
   parse_list(List), ['.'], space, expression(Expression).
 
