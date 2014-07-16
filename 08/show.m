@@ -2,9 +2,7 @@
 
 :- interface.
 
-:- import_module string.
-:- import_module integer.
-:- import_module list.
+:- import_module string, integer, list.
 
 :- typeclass show(T) where [
   pred show(T, string),
