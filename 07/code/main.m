@@ -18,7 +18,7 @@ main(IO_1, IO_Last) :-
     string.to_char_list(First, CharList),
     ( parser.top_level_expression(_E, CharList, Rest) ->
       ( Rest = [] -> 
-        io.print("Found match!\n", IO_2, IO_Last)
-      ; io.print("Partial match!\n", IO_2, IO_Last))
-    ; io.print("No match!\n", IO_2, IO_Last))
-  ; io.print("No arguments given!\n", IO_2, IO_Last)).
+        io.write_string("Found match!\n", IO_2, IO_Last)
+      ; io.write_string("Partial match!\n", IO_2, IO_Last))
+    ; io.write_string("No match!\n", IO_2, IO_Last))
+  ; io.write_string("No arguments given!\n", IO_2, IO_Last)).

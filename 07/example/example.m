@@ -38,5 +38,5 @@ to_parse = "read" ++ "a" ++
   
 main(IO_1, IO_Last) :-
    ( program(to_char_list(to_parse), _) ->
-     io.print("Parsed successfully!\n", IO_1, IO_Last)
-   ; io.print("Failed at parsin!\n", IO_1, IO_Last)).
+     io.write_string("Parsed successfully!\n", IO_1, IO_Last)
+   ; io.write_string("Failed at parsin!\n", IO_1, IO_Last)).

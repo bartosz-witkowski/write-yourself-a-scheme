@@ -21,8 +21,8 @@ main(IO_1, IO_Last) :-
     ( Arguments = [First | _Rest] ->
       string.to_char_list(First, CharList),
       ( symbol(C, CharList, _Other_Chars) ->
-        io.print("Found match: ", IO_2, IO_3),
-        io.print(C, IO_3, IO_4),
-        io.print("\n", IO_4, IO_Last)
-      ; io.print("No match!\n", IO_2, IO_Last))
-    ; io.print("No arguments given!\n", IO_2, IO_Last)).
+        io.write_string("Found match: ", IO_2, IO_3),
+        io.write_char(C, IO_3, IO_4),
+        io.write_string("\n", IO_4, IO_Last)
+      ; io.write_string("No match!\n", IO_2, IO_Last))
+    ; io.write_string("No arguments given!\n", IO_2, IO_Last)).

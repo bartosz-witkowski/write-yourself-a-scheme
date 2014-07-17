@@ -10,4 +10,4 @@
 :- implementation.
 
 main(Io_In, Io_Out) :-
-    io.print("Hello world\n", Io_In, Io_Out).
+    io.write_string("Hello world!\n", Io_In, Io_Out).

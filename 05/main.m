@@ -39,6 +39,6 @@ main(IO_1, IO_Last) :-
     ( Arguments = [First | _Rest] ->
       string.to_char_list(First, CharList),
       ( rule(C, CharList, _Other_Chars) ->
-        io.print("Found match: " ++ char_to_string(C) ++ "\n", IO_2, IO_Last)
-      ; io.print("No match!\n", IO_2, IO_Last))
-    ; io.print("No arguments given!\n", IO_2, IO_Last)).
+        io.write_string("Found match: " ++ char_to_string(C) ++ "\n", IO_2, IO_Last)
+      ; io.write_string("No match!\n", IO_2, IO_Last))
+    ; io.write_string("No arguments given!\n", IO_2, IO_Last)).

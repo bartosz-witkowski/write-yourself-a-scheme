@@ -18,7 +18,7 @@ main(IO_1, IO_Last) :-
     string.to_char_list(First, CharList),
     ( parser.top_level_expression(Exp, CharList, Rest) ->
       ( Rest = [] -> 
-        io.print(show(Exp) ++ "\n", IO_2, IO_Last)
-      ; io.print("Cannot parse expression!\n", IO_2, IO_Last))
-    ; io.print("Cannot parse expression!!\n", IO_2, IO_Last))
-  ; io.print("No arguments given!\n", IO_2, IO_Last)).
+        io.write_string(show(Exp) ++ "\n", IO_2, IO_Last)
+      ; io.write_string("Cannot parse expression!\n", IO_2, IO_Last))
+    ; io.write_string("Cannot parse expression!!\n", IO_2, IO_Last))
+  ; io.write_string("No arguments given!\n", IO_2, IO_Last)).

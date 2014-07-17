@@ -33,10 +33,7 @@ unwords(List) = String :- unwords(List, String).
 
 unwords([], "").
 unwords([Head|Tail], String) :-
-  ( Tail = [] ->
-    String = Head
-  ; unwords_aux(Tail, "", Rest),
-    String = Head ++ Rest).
+  unwords_aux(Tail, Head, String).
 
 :- pred unwords_aux(list(string)::in, string::in, string::out) is det.
 unwords_aux([], Res, Res).
