@@ -38,7 +38,4 @@ unwords([Head|Tail], String) :-
 :- pred unwords_aux(list(string)::in, string::in, string::out) is det.
 unwords_aux([], Res, Res).
 unwords_aux([Head|Tail], Acc, Res) :-
-  ( Tail = [] ->
-    Res = Acc ++ " " ++ Head
-  ; NewAcc = Acc ++ " " ++ Head,
-    unwords_aux(Tail, NewAcc, Res)).
+  unwords_aux(Tail, Acc ++ " " ++ Head, Res).
